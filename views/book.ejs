@@ -1,0 +1,58 @@
+<html>
+<head>
+    <title>
+        <%= book.name %> </title>
+    <style type="text/css">
+        #side-bar {
+            height: 100%; width: 300px; position: absolute; left: 0; right: 0; padding-top: 10px; background-color: rgb(174, 218, 174);
+        }
+        ul {
+            list-style: none;margin: 0px;padding: 0px; width:25% ;
+        }
+        a {
+            text-decoration: none; color: black; font-size: 16px;
+        }
+        .container  {
+        margin-left: 300px; display: block;;
+        }
+        img {
+          float: left; margin: 1cm;
+        }
+    </style>
+</head>
+    <body>
+        <h1><%= book.name %></h1>
+        <%- include('partials/navbar') %>
+        <div class="container" id="content">
+            <p>
+                <img src=../<%= book.image %> width="500" height="700">
+                <br><br>
+                <h2><%= book.name %></h2> 
+                
+                Summary/Review: <%= book.description %> <br><br>
+                <h3>Details</h3>
+                <table>
+                    <tr>
+                        <td>Author:</td>
+                        <td><%= book.author %></td>
+                      </tr>
+                    <tr>
+                        <td>Genre:</td>
+                        <td><%= book.genre %></td>
+                    </tr>
+                    <tr>
+                      <td>Published:</td>
+                      <td><%= book.published %></td>
+                    </tr>
+                    <tr>
+                      <td>Publisher:</td>
+                      <td><%= book.publisher %></td>
+                    </tr>
+                  </table>
+                  
+        </div>
+    </body>
+</html>
+        
+
+        

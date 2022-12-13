@@ -1,0 +1,49 @@
+<html>
+<head>
+    <title>
+        <%= book.name %> </title>
+    <style type="text/css">
+        #side-bar {
+            height: 100%; width: 300px; position: absolute; left: 0; right: 0; padding-top: 10px; background-color: rgb(174, 218, 174);
+        }
+        ul {
+            list-style: none;margin: 0px;padding: 0px; width:25% ;
+        }
+        a {
+            text-decoration: none; color: black; font-size: 16px;
+        }
+        .container  {
+        margin-left: 300px; display: block;;
+        }
+        img {
+          float: left; margin: 1cm;
+        }
+    </style>
+</head>
+    <body>
+        <%- include('partials/navbar') %>
+        <div class="container" id="content">
+            <p>
+               
+                <h2><%= book.name %></h2> 
+                
+                <form method='POST'>
+                    <label>Name:</label><br>
+                    <input type="text" name="name" value='<%= book.name %>'><br>
+                    <label>Author</label><br>
+                    <input type="text" name="author" value='<%= book.author %>'><br>
+                    <label>Genre</label><br>
+                    <input type="text" value='<%= book.genre %>' readonly><br>
+                    <label>Published</label><br>
+                    <input type="text" value='<%= book.published %>' readonly><br>
+                    <label>Publisher</label><br>
+                    <input type="text" value='<%= book.publisher %>' size="50"readonly><br>
+                    <label>Description</label><br>
+                    <input type="text" value='<%= book.description %>' size="200" readonly><br>
+                    <br>
+                    <input type="submit" value="Save">
+                  </form> 
+                  
+        </div>
+    </body>
+</html>

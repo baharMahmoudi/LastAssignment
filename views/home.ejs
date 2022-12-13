@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title> Bahar Library</title>
+        <style type="text/css">
+            #side-bar {
+                height: 100%; width: 300px; position: absolute; left: 0; right: 0; padding-top: 10px; background-color: rgb(174, 218, 174);
+            }
+            ul {
+                list-style: none;margin: 0px;padding: 0px; width:25%;
+            }
+            a {
+                text-decoration: none; color: black; font-size: 16px;
+            }
+            .container  {
+            margin-left: 300px; display: block;;
+            }
+            img {
+                margin-left: 300px; height: 100%; width: 40%;
+            }
+
+        </style>
+    </head>
+    <body>
+        <h1>Bahar Library</h1>
+        <%- include('partials/navbar') %>
+        <div class="container" id="content">
+            <h3>It's a big world in here. Start Discovering.</h3>
+            <p> Click <a href="honesty.html" style="text-decoration: underline;">Here</a> to check the honesty page.</p>
+        </div>
+        <img src="images/green.jpeg">
+    </body>
+</html>

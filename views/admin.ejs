@@ -1,0 +1,72 @@
+<html>
+<head>
+    <title>
+        Admin </title>
+       
+        <script>
+            function deleteBook(id) {
+                let result = confirm("Are you sure you want to delete this book?");
+                if(result == true){
+                    var xhr = new XMLHttpRequest();
+                    xhr.open("POST", 'http://localhost:3000/admin', true);
+                    xhr.setRequestHeader('Content-Type', 'application/json');
+                    xhr.send(JSON.stringify({
+                        id: id
+                    }));
+                }
+            }
+            function editBook(id){
+                location.assign("edit/"+ id);
+            }
+          </script>
+    <style type="text/css">
+        #side-bar {
+            height: 100%; width: 300px; position: absolute; left: 0; right: 0; padding-top: 10px; background-color: rgb(174, 218, 174);
+        }
+        ul {
+            list-style: none;margin: 0px;padding: 0px; width:25% ;
+        }
+        a {
+            text-decoration: none; color: black; font-size: 16px;
+        }
+        .container  {
+        margin-left: 300px; display: block;;
+        }
+        img {
+          float: left; margin: 1cm;
+        }
+    </style>
+</head>
+    <body>
+        
+        <%- include('partials/navbar') %>
+        <div class="container" id="content">
+            <p>
+                <br><br>
+                <table border="1">
+                    <tr><b>
+                        <td>id:</td>
+                        <td>name</td>
+                        <td>author</td>
+                        <td>Edit</td>
+                        <td>Delete</td>
+                     </b></tr>
+                     <% books.forEach(s=> 
+                     { %> <tr>
+                        <td><%= s.id %></td>
+                        <td><%= s.name %></td>
+                        <td><%= s.author %></td>
+                        
+                            <td><button onclick="editBook('<%= s.id %>')"> &#9998; </button> </td>
+                        <td><button onclick="deleteBook('<%= s.id %>')"> &#x2716; </button></p></td>
+                        </tr>
+                     <% });  
+                 %>
+                  </table>
+                  
+        </div>
+    </body>
+</html>
+        
+
+        
