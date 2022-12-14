@@ -80,6 +80,14 @@ app.get(
     })
   }
 );
+app.post(
+  "/edit/:id",
+  (req, res, next) => {
+    books.updateOne({'_id': req.params.id}, {$set: {"name": req.body.name, "author": req.body.author}}).exec().then(function(result){
+      res.redirect('/admin');
+    })
+  }
+);
 
 app.post('/admin', async (req, res) => {
   books.deleteOne({'_id': req.body.id}).then(result =>{
